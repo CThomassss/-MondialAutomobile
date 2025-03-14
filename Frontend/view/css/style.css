@@ -1,0 +1,197 @@
+:root {
+    --max-width: 1200px;
+    --bg-color: rgba(255, 255, 255, 0.7);
+    --primary-color: #007BFF;
+    --text-color: #333;
+    --white-color: #fff;
+    --font-weight-bold: 700;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --hover-scale: 1.1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: top 0.3s ease;
+}
+
+nav {
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo-container img {
+    height: 50px; /* Ajuste la taille des logos */
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px; /* Espacement entre les liens */
+    font-weight: var(--font-weight-bold);
+    margin-right: -250px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    transform: scale(var(--hover-scale));
+}
+
+.hero {
+    position: relative;
+    background: url('/ImageAccueil.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligner à gauche */
+    color: var(--white-color);
+    text-align: left; /* Alignement à gauche */
+    overflow: hidden;
+    padding-left: 2rem; /* Espacement à gauche */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: var(--white-color);
+    transition: transform 0.5s ease;
+    margin-left: 100px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.hero:hover .hero-content h1 {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--white-color);
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--white-color);
+    color: var(--text-color);
+}
+
+
+
+/* Section des Avis Clients */
+.avis-clients {
+    background-color: #fff;
+    padding: 40px 0;
+    box-shadow: var(--shadow);
+    background: url('../image/') no-repeat center center/cover;
+
+}
+
+.avis-clients h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 30px;
+    color: var(--white-color);
+}
+
+/* Conteneur principal des avis */
+.avis-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Carrousel des avis */
+.avis-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+/* Avis individuels */
+.avis {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.avis p {
+    margin: 10px 0;
+}
+
+/* Note des avis */
+.avis p:first-child {
+    font-size: 1.5rem;
+    color: #FFD700; /* Couleur dorée pour les étoiles */
+}
+
+/* Style du nom de l'auteur */
+.avis strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+}
+
+
+/* Bande de séparation avec animation va-et-vient */
+.bande {
+    width: 100%;
+    height: 5px;
+    background-color: #c3c5c7;  /* Couleur de la bande */
+    animation: va-et-vient 3s infinite;  /* L'animation va-et-vient */
+}
